@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import io.swagger.v3.oas.annotations.media.Schema;
 
+import java.time.LocalDateTime;
+
 @Entity
 
 public class Student {
@@ -18,6 +20,8 @@ public class Student {
     private  int age;
     private int rollNo;
     private String subject;
+    private LocalDateTime createdAt;
+    private  LocalDateTime updatedAt;
     @Schema(defaultValue = "false", example = "false")
     private Boolean deleted = false;
 
@@ -75,5 +79,21 @@ public class Student {
 
     public void setDeleted(Boolean deleted) {
         this.deleted = deleted;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
