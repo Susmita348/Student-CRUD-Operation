@@ -1,23 +1,25 @@
 package com.student.CRUDoperation.dto;
 
+import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.validation.constraints.*;
 
 public class createStudentRequestDTO {
     @NotBlank(message = "Name cannot be null/empty or blank")
     @Size(min = 2 , max = 50,message = "Name must be within 2 to 50 character long")
     private String name;
-    @NotNull(message = "")
+
+
     @Email
     @NotBlank (message = "Student email cannot be blank ")
     private String email;
-    @Min
-(value=18)
-    @Positive
-    @NotNull (message =" Student must be atleast 18 years old")
+
+    @Min(value=18,message = "Student must be atleast 18 years old ")
+    @NotNull (message =" Age is Required")
     private  Integer age;
+
     @NotNull(message = "Roll number is required")
     @Positive(message = "Roll number must be greater than zero")
-    private int rollNo;
+    private Integer rollNo;
 
     private String subject;
 
